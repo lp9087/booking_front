@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { tasksApi } from "../api";
 import { Link } from "react-router-dom";
 import {AiOutlinePlusCircle} from "react-icons/ai"
+import {BsTrash} from "react-icons/bs"
+import { toast } from "react-toastify";
 
 const TablesList = () => {
   let [tables, setTable] = useState([]);
@@ -16,6 +18,16 @@ const TablesList = () => {
     console.log("DATA:", responce.data);
     setTable(responce.data);
   };
+
+  let deleteTable = async(id) =>{
+  await tasksApi.deleteTable(id)
+  toast.success('Стол удалён!', {
+    position: "top-center"});
+  getTable()
+
+  }
+
+  
   return (
     <div className="notes">
       <div className="notes-header">
@@ -27,14 +39,13 @@ const TablesList = () => {
         </div>
         <p className="notes-count">{tables.length}</p>
       </div>
-
       <div className="tables-list">
         {tables.map((data, index) => (
           <Link key={data.id} to={`/table/${data.id}`}>
             <div className="notes-list-item">
-              <h3 >
+              <h3>
                 Стол {data.number}: {data.seats} места
-              </h3>
+              </h3><BsTrash size={28} onClick={(e)=>{e.preventDefault();deleteTable(data.id)}} />
             </div>
           </Link>
         ))}

@@ -11,7 +11,7 @@ export const tasksApi = {
   getDetailTable(id) {
     return api({
       method: "GET",
-      url: `/api/table/${id}`,
+      url: `/api/table/${id}/`,
     });
   },
 
@@ -22,11 +22,10 @@ export const tasksApi = {
       data
     })},
 
-  deleteTable({...data}) {
+  deleteTable(id) {
     return api({
       method: "DELETE",
-      url: `/api/table/`,
-      data
+      url: `/api/table/${id}/`,
     });
   },
 };
