@@ -14,13 +14,16 @@ const TablesImage = () => {
     console.log("DATA:", responce.data);
     setTableIm(responce.data);
   };
+
+
   return (
     <div className='tables'>
+      {}
       {tablesIm.map((data, index) => (
-            <div>
-              <h3>
+            <div key={data.id} className='tables-raw'>
+              <h1>
                 Стол {data.number}: {data.seats} места
-              </h3>
+              </h1>
             </div>
       ))}
     </div>
