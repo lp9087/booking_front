@@ -54,4 +54,6 @@ const TablesList = () => {
   );
 };
 
-export default TablesList;
+
+
+  export default TablesList

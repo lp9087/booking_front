@@ -28,4 +28,18 @@ export const tasksApi = {
       url: `/api/table/${id}/`,
     });
   },
+
+  getApp() {
+    return api({
+      method: "GET",
+      url: `/api/application/`,
+    });
+  },
+
+  getBooking() {
+    return api({
+      method: "GET",
+      url: `/api/booking/`,
+    });
+  },
 };

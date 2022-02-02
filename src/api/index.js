@@ -9,4 +9,4 @@ const api = axios.create({
 api.defaults.headers.common['Content-Type'] = 'application/json';
 
 export default api
-export {tasksApi} from './Tasks.tables'
+export {tasksApi} from './Tasks'

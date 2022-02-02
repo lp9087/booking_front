@@ -8,6 +8,8 @@ import TablesCreate from "./pages/TableCreate";
 import { ToastContainer, } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Routes } from "react-router-dom";
+import Main from "./components/Main";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <div className="app">
           <Header />
           <Routes>
+            <Route path="/" exact element={<Main />} />
             <Route path="/table" exact element={<TablesList/>} />
             <Route path="/table/create" exact element={<TablesCreate/>} />
             <Route path="/table/:id" exact element={<SingleTable/>} />

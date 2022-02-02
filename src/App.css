@@ -278,3 +278,47 @@ a {
 .back{
   justify-content:left
 }
+
+.main.application{
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  text-align: end
+
+}
+
+.main.application:hover {
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.main.application h3,
+.main.application p span {
+  font-weight: 600;
+}
+
+
+.main.application p span {
+  color: var(--color-gray);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.main.application p {
+  font-size: 14px;
+  color: var(--color-light);
+}
+
+.application.count {
+  color: var(--color-main);
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center
+}
+
+.queue {
+  background-color: rgb(62, 63, 63);
+}
+

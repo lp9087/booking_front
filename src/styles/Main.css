@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr 250px;  
+}
+
+.tables {
+  display: grid;
+  grid-template-rows: 100px 100px; /* задается высота для ряда (первые 2 ряда по 100 пикс) */
+	grid-auto-rows: 80px; /* задается высота для всех последующих рядов */
+	grid-column-gap: 40px; /* задается отступ для колонок */
+	grid-row-gap: 40px; /* задается отступ для рядов */
+	grid-row-gap: 40px; /* задается отступ для колонок и рядов */
+	grid-template-columns: 1fr 1fr 1fr ; /* задается ширина для колонок (1 колонка 1 фракция, вторая - 1, третья 100пикс)*/  
+}
+
