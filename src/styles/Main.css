@@ -15,13 +15,26 @@
 	
 	}
 
-.tables-raw{
+.tables-raw-green{
 	display: grid;
 	justify-content: center;
 	align-content: center;
+	background-color: rgb(50, 87, 13);
 }
 
-.tables-raw:hover {
+.tables-raw-green:hover {
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.tables-raw-red{
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	background-color: rgb(68, 14, 14);
+}
+
+.tables-raw-red:hover {
   background-color: var(--color-bg);
   cursor: pointer;
 }

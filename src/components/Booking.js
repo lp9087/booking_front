@@ -23,7 +23,7 @@ const BookingList = () => {
           {data.guest}: {data.guest_number} гостей, <br /> 
           {new Date(data.beginning_time).toLocaleString()}, <br /> Тел.номер:{" "}
           {data.guest_phone_number}<br /> 
-          Стол: {data.table_number}
+          Стол: {data.table}
 
             
 

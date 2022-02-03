@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 import { tasksApi } from '../api';
 
 
@@ -20,15 +22,17 @@ const TablesImage = () => {
     <div className='tables'>
       {}
       {tablesIm.map((data, index) => (
-            <div key={data.id} className='tables-raw'>
-              <h1>
-                Стол {data.number}: {data.seats} места
-              </h1>
-            </div>
+        <div className={data.booking !== true ? 'tables-raw-green':'tables-raw-red' } key={data.id}>
+          <h1>
+            Стол {data.number}: {data.seats} места
+          </h1>
+        </div>
       ))}
+      <Link to="/table/create">
+          <AiOutlinePlusCircle size={28} />
+        </Link>
     </div>
   )}
-
 
 
 export default TablesImage;
