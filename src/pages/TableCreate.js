@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
-import { AiOutlineRollback } from "react-icons/ai";
+import { GiTable } from "react-icons/gi";
+import { GiRoundTable } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -35,9 +36,14 @@ const TablesCreate = () => {
 
   return (
     <div className="createTable">
+      <div className="buttons">
       <Link to="/table/" className="back">
-        <AiOutlineRollback size={28} />
+        <GiTable size={32} />
+        </Link>
+        <Link to="/" className="back">
+        <GiRoundTable size={32} />
       </Link>
+      </div>
       <form onSubmit={createTable}>
         <h1 className="notes-header">Добавить новый стол</h1>
         <p>Номер стола</p>
@@ -65,7 +71,7 @@ const TablesCreate = () => {
         </p>
       </form>
       <div></div>
-    </div>
+      </div>
   );
 };
 //<TablesCreate onCreate={data=>setTable(prev=>[...prev,data]) }/>

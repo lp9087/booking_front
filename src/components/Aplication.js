@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { tasksApi } from "../api";
 
 const AppList = () => {
@@ -16,7 +18,11 @@ const AppList = () => {
 
   return (
     <div>
-      <p className="application count">Очередь</p>
+      <p className="application count">Очередь
+      <Link to="/application">
+          <AiOutlinePlusCircle size={24} />
+        </Link>
+        </p> 
       <div className="queue">
         {Apps.filter((data, index) => data.status !== true).map(
           (data, index) => (

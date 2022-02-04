@@ -42,4 +42,11 @@ export const tasksApi = {
       url: `/api/booking/`,
     });
   },
+
+  createApplication({...data}) {
+    return api({
+      method: "POST",
+      url: `/api/application/`,
+      data
+    })},
 };

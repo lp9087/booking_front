@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {AiOutlinePlusCircle} from "react-icons/ai"
 import {BsTrash} from "react-icons/bs"
 import { toast } from "react-toastify";
+import { GiRoundTable } from "react-icons/gi";
 
 const TablesList = () => {
   let [tables, setTable] = useState([]);
@@ -36,6 +37,9 @@ const TablesList = () => {
         <Link to="/table/create">
           <AiOutlinePlusCircle size={28} />
         </Link>
+        <Link to="/" className="back">
+        <GiRoundTable size={32} />
+      </Link>
         </div>
         <p className="notes-count">{tables.length}</p>
       </div>

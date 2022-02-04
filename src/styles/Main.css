@@ -38,3 +38,20 @@
   background-color: var(--color-bg);
   cursor: pointer;
 }
+
+.createApp{
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px;
+}
+
+.queue {
+	display: grid;
+}
+
+.buttons{
+	display: flex;
+	flex-direction: column;
+  gap: 10px;
+}
+

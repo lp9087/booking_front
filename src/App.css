@@ -315,10 +315,27 @@ a {
   font-size: 24px;
   font-weight: 600;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  gap:20px ;
 }
 
 .queue {
   background-color: rgb(62, 63, 63);
+}
+
+
+@import "~@syncfusion/ej2-base/styles/material.css";
+@import "~@syncfusion/ej2-buttons/styles/material.css";
+@import "~@syncfusion/ej2-lists/styles/material.css";
+@import "~@syncfusion/ej2-inputs/styles/material.css";
+@import "~@syncfusion/ej2-popups/styles/material.css";
+@import "~@syncfusion/ej2-react-calendars/styles/material.css";
+
+.e-datetime-wrapper .e-time-icon.e-icons::before{
+  color: orange;
+}
+
+.e-input-group-icon.e-date-icon::before{
+  color: orange;
 }
 

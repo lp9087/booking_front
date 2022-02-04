@@ -9,6 +9,7 @@ import { ToastContainer, } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Routes } from "react-router-dom";
 import Main from "./components/Main";
+import ApplicationCreate from "./pages/ApplicationAdd";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/table" exact element={<TablesList/>} />
             <Route path="/table/create" exact element={<TablesCreate/>} />
             <Route path="/table/:id" exact element={<SingleTable/>} />
+            <Route path="/application" exact element={<ApplicationCreate/>} />
           </Routes>
           <ToastContainer />
         </div>
