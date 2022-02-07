@@ -49,4 +49,18 @@ export const tasksApi = {
       url: `/api/application/`,
       data
     })},
+
+    deleteApp(id) {
+      return api({
+        method: "DELETE",
+        url: `/api/application/${id}/`,
+      });
+    },
+
+    deleteBooking(id) {
+      return api({
+        method: "DELETE",
+        url: `/api/booking/${id}/`,
+      });
+    },
 };

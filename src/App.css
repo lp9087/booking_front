@@ -339,3 +339,6 @@ a {
   color: orange;
 }
 
+.e-input-group input.e-input, .e-input-group.e-control-wrapper input.e-input{
+  color: white;
+}

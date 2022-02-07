@@ -10,6 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { Routes } from "react-router-dom";
 import Main from "./components/Main";
 import ApplicationCreate from "./pages/ApplicationAdd";
+import BookingAdd from "./pages/BookingAdd";
+
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
             <Route path="/table/create" exact element={<TablesCreate/>} />
             <Route path="/table/:id" exact element={<SingleTable/>} />
             <Route path="/application" exact element={<ApplicationCreate/>} />
+            <Route path="/booking_add" exact element={<BookingAdd/>} />
           </Routes>
           <ToastContainer />
         </div>
