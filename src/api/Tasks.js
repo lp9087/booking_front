@@ -1,3 +1,4 @@
+import axios from "axios";
 import api from ".";
 
 export const tasksApi = {
@@ -64,3 +65,8 @@ export const tasksApi = {
       });
     },
 };
+
+export default axios.create({
+  baseURL:`/api/app_for_book/`,
+  headers: {},
+});
