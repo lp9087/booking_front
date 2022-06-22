@@ -1,56 +1,80 @@
 // App.js
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import useSWR from "swr";
-import Tasks from "../api/Tasks";
+import { toast } from "react-toastify";
+import { tasksApi } from "../api";
 
-function App() {
-   const [items, setItems] = useState([])
-   const fetchData = async () => {
-     const res = await Tasks.get("/");
-     setItems(res.data);
+const Booking_create = () => {
+
+   let [guest, setGuest] = useState([])
+   let fetchApps = async () => {
+     const res = await tasksApi.getApp();
+     setGuest(res.data);
    };
    useEffect(() => {
-     fetchData();
+    fetchApps();
    }, []);
 
-  //const {data} = useSWR( Tasks.get("/"), fetchData)
-
-  const [inputValue, setValue] = useState("");
-  const [selectedValue, setSelectedValue] = useState(null);
-
-  // handle input change event
-  const handleInputChange = (value) => {
-    setValue(value);
+   let [table_number, setTable] = useState([])
+   let fetchTables = async () => {
+    const res = await tasksApi.getTable();
+    setTable(res.data);
   };
+  useEffect(() => {
+    fetchTables();
+  }, []);
 
-  // handle selection
-  const handleChange = (value) => {
-    setSelectedValue(value);
-  };
 
-  console.log(items);
+  let createBooking = async (e) => {
+    e.preventDefault();
+    let responce;
+    try {
+      responce = await tasksApi.createBooking({ guest, table_number });
+    } catch (error) {
+      toast.error("Бронь не добавлена", {
+        position: "top-center",
+      });
+      return;
+    }
+    toast.success("Бронь добавлена", {
+      position: "top-center",
+    });
+  }
+  
+    
+
+
   return (
     <div>
-      <div>Selected Value: {JSON.stringify(selectedValue || {}, null, 2)}</div>
+      <form onSubmit={createBooking}>
       <div>
-        <div></div>
+        <div>Гость из очереди</div>
         <div>
           <Select
-            // cacheOptions
-            // defaultOptions
-            options={items}
-            value={selectedValue}
-            getOptionLabel={(e) => e.name + " " + e.guest_number}
-            getOptionValue={(e) => e.id}
-            onInputChange={handleInputChange}
-            onChange={handleChange}
+            options={guest}
+            getOptionLabel={(e) => e.name + " " + e.guest_number+" гостей"}
+            onChange = {property => {
+              setGuest(property)
+            }}
           />
         </div>
-        <div></div>
+        <div>Номер стола</div>
+        <Select
+            options={table_number}
+            getOptionLabel={(e) => e.number + " стол"+ " " + e.seats +" места"}
+            onChange = {property => {
+              setTable(property)
+            }}
+          />
+        <div>
+        <button type="sumbit" className="button">
+            Отправить
+          </button>
+        </div>
       </div>
+      </form>
     </div>
   );
 }
 
-export default App;
+export default Booking_create;

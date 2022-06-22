@@ -22,7 +22,7 @@ const TablesImage = () => {
     <div className='tables'>
       {}
       {tablesIm.map((data, index) => (
-        <div className={data.booking !== true ? 'tables-raw-green':'tables-raw-red' } key={data.id}>
+        <div className={data.status !== false ? 'tables-raw-green':'tables-raw-red' } key={index}>
           <h1>
             Стол {data.number}: {data.seats} места
           </h1>

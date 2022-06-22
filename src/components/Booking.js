@@ -13,8 +13,9 @@ const BookingList = () => {
   }, []);
 
   let getBooking = async () => {
-    let responce = await tasksApi.getBooking();
-    console.log("DATA:", responce.data);
+    let responce = await tasksApi.app_with_book();
+    //debugger
+    console.log("APP:", responce.data);
     setBooking(responce.data);
   };
 
@@ -25,7 +26,6 @@ const BookingList = () => {
       getBooking()
   
     }
-
   return (
     <div>
       <p className="application count">Брони
@@ -34,11 +34,11 @@ const BookingList = () => {
         </Link></p>
       <div className="queue">
         {Bookings.map((data, index) => (
-          <div key={data.id} className="main application">
-          {data.guest}: {data.guest_number} гостей, <br /> 
-          {new Date(data.beginning_time).toLocaleString()}, <br /> Тел.номер:{" "}
-          {data.guest_phone_number}<br /> 
-          Стол: {data.table}
+          <div key={index} className="main application">
+          {data.name}: {data.guest_number} гостей, <br /> 
+          {new Date(data.datetime).toLocaleString()}, <br /> 
+          Тел.номер:{" "}{data.phone_number}<br /> 
+          Стол: {data.booking[0].table_number}
           <BsTrash size={28} onClick={(e)=>{e.preventDefault();deleteBooking(data.id)}} />
           </div>
         ))}

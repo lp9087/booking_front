@@ -45,7 +45,7 @@ const TablesList = () => {
       </div>
       <div className="tables-list">
         {tables.map((data, index) => (
-          <Link key={data.id} to={`/table/${data.id}`}>
+          <Link key={index} to={`/table/${data.id}`}>
             <div className="notes-list-item">
               <h3>
                 Стол {data.number}: {data.seats} места

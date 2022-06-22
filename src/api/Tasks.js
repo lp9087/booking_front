@@ -43,11 +43,25 @@ export const tasksApi = {
       url: `/api/booking/`,
     });
   },
+  
+  app_with_book() {
+    return api({
+      method: "GET",
+      url: `/api/app_with_book/`,
+    });
+  },
 
   createApplication({...data}) {
     return api({
       method: "POST",
       url: `/api/application/`,
+      data
+    })},
+  
+  createBooking({...data}) {
+    return api({
+      method: "POST",
+      url: `/api/booking/`,
       data
     })},
 
@@ -66,7 +80,3 @@ export const tasksApi = {
     },
 };
 
-export default axios.create({
-  baseURL:`/api/app_for_book/`,
-  headers: {},
-});

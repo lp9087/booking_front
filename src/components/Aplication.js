@@ -38,7 +38,7 @@ const AppList = () => {
       <div className="queue">
         {Apps.filter((data, index) => data.status !== true).map(
           (data, index) => (
-            <div key={data.id} className="main application">
+            <div key={index} className="main application">
               {data.name}: {data.guest_number} гостей, <br />
               {new Date(data.datetime).toLocaleString()}, <br /> Тел.номер:{" "}
               {data.phone_number}
