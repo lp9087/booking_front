@@ -1,4 +1,3 @@
-import axios from "axios";
 import api from ".";
 
 export const tasksApi = {
@@ -76,6 +75,20 @@ export const tasksApi = {
       return api({
         method: "DELETE",
         url: `/api/booking/${id}/`,
+      });
+    },
+
+    freeTables() {
+      return api({
+        method: "GET",
+        url: `/api/free_tables/`,
+      });
+    },
+
+    app_without_book() {
+      return api({
+        method: "GET",
+        url: `/api/app_without_book/`,
       });
     },
 };

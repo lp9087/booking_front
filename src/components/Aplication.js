@@ -23,9 +23,7 @@ const AppList = () => {
     toast.success('Запись успешно удалена!', {
       position: "top-center"});
       getApp()
-  
     }
-
 
 
   return (

@@ -14,8 +14,6 @@ const BookingList = () => {
 
   let getBooking = async () => {
     let responce = await tasksApi.app_with_book();
-    //debugger
-    console.log("APP:", responce.data);
     setBooking(responce.data);
   };
 
@@ -24,7 +22,7 @@ const BookingList = () => {
     toast.success('Бронь успешно удалена!', {
       position: "top-center"});
       getBooking()
-  
+      window.location.reload(false);
     }
   return (
     <div>

@@ -1,24 +1,27 @@
-// App.js
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { toast } from "react-toastify";
 import { tasksApi } from "../api";
+import { GiRoundTable } from "react-icons/gi";
 
 const Booking_create = () => {
+  let navigate = useNavigate();
+  let [guest, setGuest] = useState([])
+  let [table_number, setTable] = useState([])
 
-   let [guest, setGuest] = useState([])
-   let fetchApps = async () => {
-     const res = await tasksApi.getApp();
+  let fetchApps = async () => {
+     const res = await tasksApi.app_without_book();
      setGuest(res.data);
    };
    useEffect(() => {
     fetchApps();
    }, []);
 
-   let [table_number, setTable] = useState([])
-   let fetchTables = async () => {
-    const res = await tasksApi.getTable();
-    setTable(res.data);
+   
+  let fetchTables = async () => {
+   const res = await tasksApi.freeTables();
+   setTable(res.data);
   };
   useEffect(() => {
     fetchTables();
@@ -27,9 +30,8 @@ const Booking_create = () => {
 
   let createBooking = async (e) => {
     e.preventDefault();
-    let responce;
     try {
-      responce = await tasksApi.createBooking({ guest, table_number });
+      await tasksApi.createBooking({ guest, table_number });
     } catch (error) {
       toast.error("Бронь не добавлена", {
         position: "top-center",
@@ -39,13 +41,14 @@ const Booking_create = () => {
     toast.success("Бронь добавлена", {
       position: "top-center",
     });
+    navigate("/");
   }
   
-    
-
-
   return (
     <div>
+      <Link to="/" className="back">
+        <GiRoundTable size={32} />
+      </Link>
       <form onSubmit={createBooking}>
       <div>
         <div>Гость из очереди</div>

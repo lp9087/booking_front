@@ -16,7 +16,6 @@ const TablesList = () => {
 
   let getTable = async () => {
     let responce = await tasksApi.getTable();
-    console.log("DATA:", responce.data);
     setTable(responce.data);
   };
 
@@ -25,7 +24,6 @@ const TablesList = () => {
   toast.success('Стол удалён!', {
     position: "top-center"});
   getTable()
-
   }
 
   
