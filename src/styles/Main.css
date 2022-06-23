@@ -1,8 +1,10 @@
+/* TABLE LIST STYLE */
 .wrapper {
   display: grid;
   grid-template-columns: 300px 1fr 250px;  
 }
 
+/* TABLE LIST STYLE */
 .tables {
 		display: grid;
 
@@ -15,40 +17,58 @@
 	
 	}
 
+/* FREE TABLE STYLE */
 .tables-raw-green{
 	display: grid;
 	justify-content: center;
 	align-content: center;
-	background-color: rgb(50, 87, 13);
+	background-color: rgb(81, 104, 58);
 }
 
+/* FREE TABLE NAVI STYLE */
 .tables-raw-green:hover {
   background-color: var(--color-bg);
   cursor: pointer;
 }
 
+/* BUSY TABLE STYLE */
 .tables-raw-red{
 	display: grid;
 	justify-content: center;
 	align-content: center;
-	background-color: rgb(68, 14, 14);
+	background-color: rgb(54, 38, 38);
 }
-
+/* BUSY TABLE NAVI STYLE */
 .tables-raw-red:hover {
   background-color: var(--color-bg);
   cursor: pointer;
 }
 
+/* createApp STYLE */
 .createApp{
   display: flex;
   justify-content: center;
   padding: 10px 16px;
 }
 
+/* createBook STYLE */
+.createBook{
+	display: grid;
+	justify-content: center;
+	padding: 10px 16px;
+  }
+
+/* select STYLE */
+.select{
+	width: 500px;
+  }
+  
+/* queue STYLE */
 .queue {
 	display: grid;
 }
 
+/* buttons STYLE */
 .buttons{
 	display: flex;
 	flex-direction: column;

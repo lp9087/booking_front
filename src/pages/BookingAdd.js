@@ -50,9 +50,9 @@ const Booking_create = () => {
         <GiRoundTable size={32} />
       </Link>
       <form onSubmit={createBooking}>
-      <div>
+      <div className="createBook">
         <div>Гость из очереди</div>
-        <div>
+        <div className="select">
           <Select
             options={guest}
             getOptionLabel={(e) => e.name + " " + e.guest_number+" гостей"}
@@ -76,7 +76,7 @@ const Booking_create = () => {
         </div>
       </div>
       </form>
-    </div>
+      </div>
   );
 }
 

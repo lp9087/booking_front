@@ -21,7 +21,6 @@ const BookingList = () => {
     await tasksApi.deleteBooking(id)
     toast.success('Бронь успешно удалена!', {
       position: "top-center"});
-      getBooking()
       window.location.reload(false);
     }
   return (
